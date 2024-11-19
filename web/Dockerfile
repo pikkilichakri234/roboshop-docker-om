@@ -1,4 +1,4 @@
-FROM nginx:stable-alpine3.20-perl
+FROM nginx:latest
 RUN rm -rf /usr/share/nginx/html/index.html
 RUN rm -rf /etc/nginx/nginx.conf
 RUN rm -rf /etc/nginx/conf.d/default.conf
