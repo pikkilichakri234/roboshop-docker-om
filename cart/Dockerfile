@@ -1,4 +1,4 @@
-FROM node:14-alpine
+FROM node:hydrogen-alpine3.20
 EXPOSE 8080
 RUN addgroup -S cart && adduser -S cart cart
 WORKDIR /opt/server
