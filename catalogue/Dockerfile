@@ -1,8 +1,10 @@
-FROM node:hydrogen-alpine3.20
+FROM node:23.2.0-alpine3.20
 EXPOSE 8080
+RUN addgroup -S cart && adduser -S cart cart
 WORKDIR /opt/server
+RUN chown -R cart:cart /opt/server
+USER cart
 COPY package.json .
 COPY server.js .
 RUN npm install
-ENV MONGO=true
 CMD ["node", "server.js"]
